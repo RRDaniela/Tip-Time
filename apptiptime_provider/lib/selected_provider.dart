@@ -25,8 +25,7 @@ class SelectedProvider extends ChangeNotifier {
     double tipDouble = double.parse(tipInputField);
     tipDouble = (tipDouble * selectedOption / 100) + tipDouble;
     if (_switchValue) {
-      int roundedNumber = tipDouble.round();
-      returnValue = roundedNumber.toDouble();
+      returnValue = tipDouble.ceilToDouble(); //Rounding up
     } else {
       String rounding = tipDouble.toStringAsFixed(2);
       returnValue = double.parse(rounding);
